@@ -1,0 +1,266 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --black: #1c2a39;
+  --gray: #5c6a79;
+  --purple: #4c3db2;
+}
+.navbar {
+  height: 120px;
+  width: 80%;
+  margin-left: 10%;
+}
+.title {
+  font-weight: bold;
+}
+.menu,
+.menu-icons {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  color: var(--gray);
+  cursor: pointer;
+}
+.menu .active {
+  color: var(--black);
+  font-weight: bold;
+}
+.menu li,
+.menu-icons li {
+  margin: 0 10px;
+}
+.menu-icons li {
+  color: var(--black);
+}
+.basket-icon{
+  position: relative;
+}
+.basket-count {
+  position: absolute;
+  right: -0.7rem;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  background-color: var(--black);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.basket-count:empty{
+  display: none;
+}
+
+.slider{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 600px;
+}
+.slider img{
+    height: 600px;
+}
+.store{
+   width: 80%;
+   margin-left: 10%;
+}
+.book-card{
+   height: 400px; 
+}
+.fos{
+   font-family: "Open Sans", sans-serif;
+}
+.gray{
+    color: var(--gray);  
+}
+.black{
+    color: var(--black);
+}
+.fw-bold{
+   font-weight: bold;
+}
+.book-star-rate .bi-star, .bi-star-fill {
+  color: #eeedf5;
+  font-size: 1.2 rem;
+  margin-right: 5px;
+
+}
+.book-star-rate .bi-star-fill ,.active{
+  color: #f2c94c;
+}
+.book-description{
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.old-price{
+  text-decoration: line-through;
+  color: #bdbdbd;
+}
+.btn-purple{
+  cursor: pointer;
+  border: 2px solid var(--purple);
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: transparent;
+  transition: all 250ms ease-in-out;
+  padding: 5px 0;
+}
+.btn-purple:hover{
+  background-color: var(--purple);
+  color: white;
+}
+.filter-bg{
+  position: absolute;
+  left: 0;
+  width: 600px;
+  height: 900px;
+  background: linear-gradient(to right, #d6d4de , white);
+  z-index: -1;
+}
+.filter{
+  position: absolute;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  min-height: 650px;
+  justify-content: center;
+}
+.filter li{
+  color: var(--gray);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  position: relative;
+}
+.filter li:hover{
+  color: var(--purple);
+}
+.filter li.active{
+  color: var(--purple);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.filter li.active::before{
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--purple);
+  position: absolute;
+  left: -20px;
+  margin-top: 14px;
+}
+.basket-modal{
+  position: fixed;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  background-color:#5c6a7950;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all 250ms ease-in-out;
+}
+.basket-modal.active{
+  opacity: 1;
+  z-index: 999;
+}
+.basket-items{
+  position: relative;
+  width: 0;
+  background-color: white;
+  height: 100%;
+  float: right;
+  transition: all 250ms ease-in-out;
+}
+.basket-modal.active .basket-items{
+  width: 450px;
+}
+.basket-items .bi-x{
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 3rem;
+  color: var(--black);
+  cursor: pointer;
+}
+.basket-title{
+  color: #1c2a39;
+  margin-top: 5rem;
+  text-align: center;
+  font-weight: bold;
+}
+.basket-list{
+  list-style: none;
+  padding: 0 10px;
+  margin-top: 3rem;
+  max-height: 650px;
+  overflow-y: auto;
+}
+.basket-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.basket-item-info{
+  width: 250px;
+}
+.basket-item-info .book-name{
+  font-size: 16px;
+  font-weight: bold;
+}
+.basket-item-info .book-price{
+  font-size: 16px;
+}
+.basket-item-info .book-remove{
+  font-size: 16px;
+  cursor: pointer;
+  color: var(--gray);
+}
+.basket-item .book-count{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--purple);
+}
+.book-count .increase{
+  margin-left: 5px;
+}
+.book-count .decrease{
+  margin-right: 5px;
+}
+.book-count .increase, .decrease{
+  cursor: pointer;
+  color: var(--purple);
+}
+.basket-total{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 5%;
+  align-items: center;
+  width: inherit;
+}
+.basket-total button{
+  width: 250px;
+
+}
+.total-price:empty + .btn-purple{
+  display: none;
+}
